@@ -132,21 +132,6 @@ class ReportResults {
 		}
 	}
 
-	// !!!!!!THIS NEEDS TO BE UPDATED, PLEASE USE assertDataRowByIndex() ABOVE!!!!!!!
-	assertAllDataRows(rowsData) {
-		this.getReportDataTableBody.children().as('dataRows')
-		cy.get('@dataRows').each((row, rowIndex) => {
-			cy.wrap(Object.values(rowsData[rowIndex])).each(val => {
-				// eslint-disable-next-line eqeqeq
-				if (val != '' && typeof val !== 'boolean') {
-					const trimmedValue =
-						typeof val === 'string' ? val.substring(0, 15) : val.toString().substring(0, 15)
-					cy.wrap(row).children().contains(trimmedValue).should('have.length', 1)
-				}
-			})
-		})
-	}
-
 	compareTableDataWithWarning(tableData) {
 		const errorData = []
 		return this.getReportDataTableBody
@@ -475,27 +460,6 @@ class GenerateReports {
 		return cy.clickAndAssertCalls(this.getGoToReportLink, '**/reports?_start=0&_limit=20**', 'GET', 200)
 	}
 
-	// Why do we use a different modal for classes reports???
-	get getClassesReportModal() {
-		return cy.get('div.is_open[data-role="ClassesReportModal"]')
-	}
-	get getClassesReportOptionsContainer() {
-		return this.getClassesReportModal.find('div[data-role="ClassesReportOptions"]')
-	}
-	get getClassesCreateReportButton() {
-		return this.getClassesReportModal.find('span[data-action="onReportCreate"]')
-	}
-	get getClassCourseSelect() {
-		return this.getClassesReportModal.find('div[data-role="coursesEnum"] select')
-	}
-	get getAddClassCourseButton() {
-		return this.getClassesReportModal.find('span[data-action="onAddCourseForClass"]')
-	}
-	get getClassCourseTable() {
-		return this.getClassesReportModal.find('table[data-role="courseOfList"] tbody')
-	}
-	// Remove the above options once we get rid of classes modal
-	// REMOVE THESE METHODS ONCE WE GET RID OF CLASSES MODAL
 	runReportByTypeClass() {
 		cy.wait(1000)
 		this.getRunReportButtons.filter('[data-type="classes_attendance"]').scrollIntoView().click()
