@@ -1,4 +1,6 @@
-The provided Cypress test script, designed to validate the export functionality of the Class Events page in a Learning Management System (LMS), employs several testing methodologies. Below is a summary of the key methodologies used, along with their advantages:
+The provided Cypress test script,
+cypress/e2e/projects/lms/legacy/legacy/class_events/0018-FNC-DLY-ALL_classEventsExportPageReport.cy.js
+ is designed to validate the export functionality of the Class Events page in a Learning Management System (LMS), employs several testing methodologies. Below is a summary of the key methodologies used, along with their advantages:
 
 1. Page Object Model (POM)
 
