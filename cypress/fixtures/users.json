@@ -1,0 +1,41 @@
+{
+	"credentials": {
+		"automation": {
+			"tokens": {
+				"experimental" : "f3203e114cb8751cd23d0408abaa8f0e",
+				"stage": "72b18e766a4d794a4cf3f4fab10a6e37", 
+				"production": "9ceb7ac5d780c056ffe60f689c1823b9" 
+			},
+			"admin": [
+				{ "user": "auto_admin", "pwd": "Password" }
+			],
+			"student": [
+				{ "user": "autouser", "pwd": "P@ssw0rd!" },
+				{ "user": "automation_myaccount-script-user", "pwd": "Ab11!!1" },
+				{ "user": "automation_firstlogin-script-user", "pwd": "Ab11!!1" },
+				{ "user": "autotest_portal", "pwd": "P@ssw0rd!" }
+			]
+		},
+		"automation-sa": {
+			"admin": [
+				{ "user": "automation__test", "pwd": "Password" }
+			],
+			"student": [
+				{ "user": "autouser", "pwd": "P@ssw0rd!" }
+			]
+		},
+	
+		"automation2": {
+            "admin": [
+                { "user": "automation2_admin", "pwd": "P@ssw0rd!" }
+            ],
+            "student": [
+                { "user": "automation2_autouser", "pwd": "P@ssw0rd!" }
+            ]
+        },
+	"tokens": {
+        "elasticSend": "7df7b630f517efc58706640de2b6a9cby845",
+        "elasticSearch": "cmVhZG9ubHk6eG5rQGV4cDhwbmIuQ0pYMHy2cg==",
+
+    }
+}
